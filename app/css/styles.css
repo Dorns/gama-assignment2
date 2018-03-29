@@ -1,3 +1,13 @@
+@font-face {
+  font-family: neris-light;
+  src: url("../font/Neris-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: neris-thin;
+  src: url("../font/Neris-Thin.otf") format("opentype");
+}
+
 html {
   overflow-x: hidden;
 }
@@ -11,89 +21,136 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  background-color: #4C4B4B;
+  background-image: url("../images/fundo_pesquisa_1024.jpg");
   background-size: cover;
-  background-position: center, center; }
-  .hero h1 {
-    color: #E5E1DD;
-    font-family: 'Megrim', cursive;
-    font-size: 3rem;
-    margin-bottom: 0;
-    text-align: center;
-    margin-top: 90px;
-    opacity: 1;
-    transform: scale(1);
-    transition: transform 0.5s ease, opacity 1s ease; }
-  .hero h1:before {
-    top: 0;
-    left: 0; }
-  .hero h1:after {
-    bottom: 0;
-    right: 0; }
-  .hero h1:before,
-  .hero h1:after {
-    height: 2px;
-    width: 100%;
-    content: "";
-    background: #E5E1DD;
-    display: block;
-    position: absolute;
-    transition: width 0.4s ease;
-    transition-delay: 0.8s; }
-  .hero form {
-    align-self: center;
-    font-family: 'Open Sans', sans-serif;
-    width: 100%; }
-  .hero input::placeholder {
-    font-family: 'Open Sans', sans-serif;
-    color: #bbb5af;
-    font-size: 0.875em; }
-  .hero input:focus::placeholder {
-    color: #bbb5af; }
-  .hero textarea::placeholder {
-    color: #bbb5af; }
-  .hero input:hover::placeholder {
-    color: black;
-    font-size: 0.875em; }
-  .hero input:hover:focus::placeholder {
-    color: black; }
-  .hero input:hover::placeholder {
-    color: black;
-    font-size: 0.875em; }
-  .hero #form {
-    position: relative;
-    width: 500px;
-    margin: 0px auto 100px auto; }
-  .hero input, textarea, select {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.875em;
-    width: 470px;
-    height: 50px;
-    padding: 0px 15px 0px 15px;
-    background: transparent;
-    outline: none;
-    color: #bbb5af;
-    border: solid 1px #b3aca7;
-    border-bottom: none;
-    transition: all 0.3s ease-in-out; }
-  .hero input:hover {
-    background: #b3aca7;
-    color: #4F4E4E; }
-  .hero #submit {
-    width: 502px;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.875em;
-    color: #b3aca7;
-    outline: none;
-    cursor: pointer;
-    border: solid 1px #b3aca7; }
-  .hero #submit:hover {
-    color: #4F4E4E; }
-  .hero #ip {
-    display: none;
-  }
+  background-position: center, center;
+  border-top: 5px solid #366dbf;
+  justify-content: space-around;
+}
 
-    
+.text {
+  font-family: neris-thin;
+  font-size: 3rem;
+  color: white;
+  width: 25%;
+  margin-left: 260px;
+}
+
+.text span {
+  font-family: neris-light;
+  font-weight: bold;
+}
+
+.hero form {
+  font-family: 'Open Sans', sans-serif;
+  align-self: center;
+  width: 50%;
+  background-color: #366dbfc7;
+  text-align: center;
+  margin: 60px 200px 60px 0;
+  border-radius: 5px;
+}
+
+.hero h2 {
+  font-family: neris-light;
+  font-size: 2rem;
+  margin: 10px 0;
+  color: white;
+}
+
+.hero p {
+  color: white;
+  font-size: 0.8rem;
+  margin: 2px 0;
+}
+
+.hero input::placeholder {
+  font-family: 'Open Sans', sans-serif;
+  color: #bbb5af;
+  font-size: 0.875em;
+  text-align: center;
+}
+
+.hero select {
+  text-align: center;
+  border-radius: 5px;
+}
+
+.hero input:hover::placeholder {
+  color: #5790e6;
+  font-size: 0.875em;
+}
+
+.hero input:hover:focus::placeholder {
+  color: #5790e6;
+}
+
+.hero input:hover::placeholder {
+  color: #5790e6;
+  font-size: 0.875em;
+}
+
+.hero #form {
+  position: relative;
+  width: 280px;
+}
+
+.hero input,
+textarea,
+select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875em;
+  height: 35px;
+  margin: 7px 0;
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  color: black;
+  border: solid 1px #b3aca7;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.hero input,
+.hero select {
+  width: 240px;
+  padding: 0;
+  text-align: center;
+}
+
+.hero textarea {
+  width: 240px;
+  height: 140px;
+  text-align: center;
+}
+
+.hero select {
+  text-align-last: center;
+}
+
+.hero textarea::placeholder {
+  padding: 50px 0;
+}
+
+.hero #submit {
+  padding: 10px 40px;
+  width: 150px;
+  height: 45px;
+  margin: 0px 10px 10px 0px;
+  border-radius: 5px;
+  color: #5790e6;
+  font-size: 0.7rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #4F4E4E;
+  border: none;
+  border-bottom: 5px solid black;
+}
+
+.action-button:active {
+  transform: translate(0px, 5px);
+  border-bottom: 1px solid;
+}
+
+.hero #ip {
+  display: none;
+}

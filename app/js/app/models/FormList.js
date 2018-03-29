@@ -7,29 +7,29 @@ var config = {
     projectId: "gamaassignment2",
     storageBucket: "gamaassignment2.appspot.com",
     messagingSenderId: "552591821332"
-  };
+};
 
 class FormList {
-    
+
     constructor() {
-        
+
         this._form = [];
     }
-    
+
     //FORM MAKER
     add(form) {
 
         //FIREBASE START
-            if (firebaseOn == false) {
-                firebase.initializeApp(config);
-            };
-            var database = firebase.database();
-            var ref = database.ref('forms');
-            firebaseOn = true;
-    
-            ref.push(form);
-        
+        if (firebaseOn == false) {
+            firebase.initializeApp(config);
+        };
+        var database = firebase.database();
+        var ref = database.ref('forms');
+        firebaseOn = true;
+
+        ref.push(form);
+
         this._form.push(form);
     }
-    
+
 }

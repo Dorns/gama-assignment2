@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css ">
     <link rel="stylesheet" type="text/css" href="./css/queries.css ">
     <title>Assignment 2</title>
 </head>
+
 <body>
 
     <div class="hero">
 
-        <div id="title" class="is-loading">
-
-            <h1>Assignment 2</h1>
-
-            <div id="successView"></div>
-
+        <div class="text">
+            <span>Lorem ipsum,</span> dolor sit amet consectetur adipisicing elit. Sequi harum consequuntur distinctio recusandae
+            obcaecati.
         </div>
 
-                <form id="form" class="topBefore" onsubmit="formController.add(event)">
+        <form id="form" class="topBefore" onsubmit="formController.add(event)">
 
-                        <select id="status" name="status">
-                            <option value="B2C">Contratante</option>
-                            <option value="B2B">Candidato</option>
-                        </select>
-		
-                        <input id="name" type="text" placeholder="Nome Completo"
-                        pattern="(.*)\s(.*)" 
-                        oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
-                        oninput="setCustomValidity('')"  
-                        required>
+            <h2>Pesquisa</h2>
+            <div id="successView"></div>
 
-                        <input id="email" type="email" placeholder="E-Mail"
-                        pattern="(.*)+@(.*)+\.(.*)"
-                        oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
-                        oninput="setCustomValidity('')"  
-                        required>
+            <select id="status" name="status">
+                <option value="B2C">Contratante</option>
+                <option value="B2B">Candidato</option>
+            </select>
 
-                        <input id="company" type="text" placeholder="Empresa"
-                        oninvalid="this.setCustomValidity('Favor Inserir Nome da Empresa')"
-                        oninput="setCustomValidity('')"
-                        required>
+            <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
+                oninput="setCustomValidity('')" required>
 
-                        <textarea id="leadsFirst" type="text" name="leadsFirst" placeholder="Você já teve problema com análise de competências técnicas em um processo seletivo?"></textarea>
-                        <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou ou está lidando com isso?"></textarea>
-                        <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal para resolver isso?"></textarea>
-                        <textarea id="ip" type="text" name="ip"></textarea>
-                        <input id="submit" type="submit" value="Enviar!">
+            <input id="email" type="email" placeholder="E-Mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
+                oninput="setCustomValidity('')" required>
 
-                  </form>
+            <p>Você já teve problema com análise
+                <br> de competências técnicas
+                <br> em um processo seletivo?</p>
+
+            <select id="leadsFirst" name="leadsFirst">
+                <option value="sim">Sim</option>
+                <option value="nao">Nao</option>
+            </select>
+
+            <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou&#10; ou está lidando com isso?"></textarea>
+            <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal&#10; para resolver isso?"></textarea>
+            <textarea id="ip" type="text" name="ip"></textarea>
+            <input class="action-button" id="submit" type="submit" value="Enviar">
+
+        </form>
 
 
-    <script src="js/app/models/Form.js"></script>
-    <script src="js/app/controllers/FormController.js"></script>
-    <script src="js/app/models/FormList.js"></script>
-    <script src="js/app/views/Views.js"></script>
-    <script src="js/app/views/InputView.js"></script>
-    <script src="js/app/models/Message.js"></script>
-    <script src="js/app/views/SuccessView.js"></script>
-    <script type="application/javascript">
-        function getIP(json) {
-          document.getElementById("ip").innerHTML = json.ip;
-        }
+        <script src="js/app/models/Form.js"></script>
+        <script src="js/app/controllers/FormController.js"></script>
+        <script src="js/app/models/FormList.js"></script>
+        <script src="js/app/views/Views.js"></script>
+        <script src="js/app/models/Message.js"></script>
+        <script src="js/app/views/SuccessView.js"></script>
+        <script type="application/javascript">
+            function getIP(json) {
+                document.getElementById("ip").innerHTML = json.ip;
+            }
         </script>
-        <script type="application/javascript" 
-                src="https://api.ipify.org?format=jsonp&callback=getIP">
+        <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
         </script>
-    <script>
-        let formController = new FormController();
-    </script>
+        <script>
+            let formController = new FormController();
+        </script>
 </body>
+
 </html>
