@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css ">
+    <title>Assignment 2</title>
+</head>
+<body>
+    <div class="hero">
+
+        <div id="title" class="is-loading">
+
+            <h1>Assignment 2</h1>
+
+            <div id="successView"></div>
+
+        </div>
+
+                <form id="form" class="topBefore" onsubmit="formController.add(event)">
+
+                        <select id="status" name="status">
+                            <option value="contratante">Contratante</option>
+                            <option value="candidato">Candidato</option>
+                        </select>
+		
+                        <input id="name" type="text" placeholder="Nome Completo"
+                        pattern="(.*)\s(.*)" 
+                        oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
+                        oninput="setCustomValidity('')"  
+                        required>
+
+                        <input id="email" type="email" placeholder="E-Mail"
+                        pattern="(.*)+@(.*)+\.(.*)"
+                        oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
+                        oninput="setCustomValidity('')"  
+                        required>
+
+                        <input id="company" type="text" placeholder="Empresa"
+                        oninvalid="this.setCustomValidity('Favor Inserir Nome da Empresa')"
+                        oninput="setCustomValidity('')"
+                        required>
+
+                        <textarea id="leadsFirst" type="text" name="leadsFirst" placeholder="Você já teve problema com análise de competências técnicas em um processo seletivo?"></textarea>
+                        <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou ou está lidando com isso?"></textarea>
+                        <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal para resolver isso?"></textarea>
+
+                        <input id="submit" type="submit" value="Enviar!">
+                    
+                  </form>
+    
+    <script src="js/app/models/Form.js"></script>
+    <script src="js/app/controllers/FormController.js"></script>
+    <script src="js/app/models/FormList.js"></script>
+    <script src="js/app/views/Views.js"></script>
+    <script src="js/app/views/InputView.js"></script>
+    <script src="js/app/models/Message.js"></script>
+    <script src="js/app/views/SuccessView.js"></script>
+    <script>
+        let formController = new FormController();
+    </script>
+</body>
+</html>
