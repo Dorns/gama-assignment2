@@ -7,8 +7,8 @@ body {
 }
 
 .hero {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,7 +18,7 @@ body {
   .hero h1 {
     color: #E5E1DD;
     font-family: 'Megrim', cursive;
-    font-size: 6rem;
+    font-size: 3rem;
     margin-bottom: 0;
     text-align: center;
     margin-top: 90px;
@@ -41,12 +41,6 @@ body {
     position: absolute;
     transition: width 0.4s ease;
     transition-delay: 0.8s; }
-  .hero h2 {
-    color: #E5E1DD;
-    font-family: 'Megrim', cursive;
-    font-size: 3rem;
-    margin-top: 20px;
-    text-align: center; }
   .hero form {
     align-self: center;
     font-family: 'Open Sans', sans-serif;
@@ -98,3 +92,5 @@ body {
     border: solid 1px #b3aca7; }
   .hero #submit:hover {
     color: #4F4E4E; }
+
+    
