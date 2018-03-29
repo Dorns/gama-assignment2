@@ -1,3 +1,4 @@
+
 class FormController {
     
     constructor() {
@@ -11,12 +12,14 @@ class FormController {
         this._inputLeadsFirst = $('#leadsFirst');
         this._inputLeadsSecond = $('#leadsSecond');
         this._inputLeadsThird = $('#leadsThird');
+        this._ip = $('#ip');
+        this._currentDate = new Date().toLocaleString();
         this._formList = new FormList();
         //MESSAGE MAKER
         this._mensagem = new Message();
         this._successView = new SuccessView($('#successView'));
         this._successView.update(this._mensagem);
-        
+
     }
     
     add(event) {
@@ -41,7 +44,9 @@ class FormController {
             this._inputCompany.value,
             this._inputLeadsFirst.value,
             this._inputLeadsSecond.value,
-            this._inputLeadsThird.value
+            this._inputLeadsThird.value,
+            this._ip.value,
+            this._currentDate,
         );
     }
     
