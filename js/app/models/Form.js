@@ -1,12 +1,11 @@
 //FORM CONSTRUCTOR AND METHODS
 class Form {
-    
-    constructor(status, name, email, company, leadsFirst, leadsSecond, leadsThird, ip, currentDate) {
+
+    constructor(status, name, email, leadsFirst, leadsSecond, leadsThird, ip, currentDate) {
 
         this._status = status;
         this._name = name;
         this._email = email;
-        this._company = company;
         this._leadsFirst = leadsFirst;
         this._leadsSecond = leadsSecond;
         this._leadsThird = leadsThird;
@@ -20,18 +19,13 @@ class Form {
     }
 
     get name() {
-        
+
         return this._name;
     }
-    
+
     get email() {
-        
+
         return this._email;
-    }
-    
-    get company() {
-        
-        return this._company;
     }
 
     get leadsFirst() {
@@ -42,15 +36,15 @@ class Form {
         return this._leadsSecond;
     }
 
-    get leadsThird () {
+    get leadsThird() {
         return this._leadsSecond;
     }
-    
-    get ip () {
+
+    get ip() {
         return this._ip;
     }
 
-    get currentdate () {
+    get currentdate() {
         return this._currentdate;
     }
 }

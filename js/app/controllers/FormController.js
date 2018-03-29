@@ -1,6 +1,5 @@
-
 class FormController {
-    
+
     constructor() {
 
         //FORM MAKER
@@ -8,7 +7,6 @@ class FormController {
         this._inputStatus = $('#status');
         this._inputName = $('#name');
         this._inputEmail = $('#email');
-        this._inputCompany = $('#company');
         this._inputLeadsFirst = $('#leadsFirst');
         this._inputLeadsSecond = $('#leadsSecond');
         this._inputLeadsThird = $('#leadsThird');
@@ -21,27 +19,26 @@ class FormController {
         this._successView.update(this._mensagem);
 
     }
-    
+
     add(event) {
-        
+
         //ADD FORM
         event.preventDefault();
         this._formList.add(this._createForm());
         //ADD MESSAGE
         this._mensagem.texto = 'Cadastro Efetuado com Sucesso';
         this._successView.update(this._mensagem);
-        this._clearForm();   
+        this._clearForm();
 
     }
-    
+
     _createForm() {
-        
+
         //CREATE FORM
         return new Form(
             this._inputStatus.value,
             this._inputName.value,
             this._inputEmail.value,
-            this._inputCompany.value,
             this._inputLeadsFirst.value,
             this._inputLeadsSecond.value,
             this._inputLeadsThird.value,
@@ -49,18 +46,18 @@ class FormController {
             this._currentDate,
         );
     }
-    
+
     _clearForm() {
-     
+
         //CLEAR FORM
         this._inputStatus.value = '';
         this._inputName.value = '';
         this._inputEmail.value = '';
-        this._inputCompany.value = '';
         this._inputLeadsFirst.value = '';
         this._inputLeadsSecond.value = '';
         this._inputLeadsThird.value = '';
-        this._inputStatus.focus();   
+        this._ip.value = '';
+        this._inputStatus.focus();
     }
 
 }
