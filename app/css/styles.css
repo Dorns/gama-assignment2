@@ -92,5 +92,8 @@ body {
     border: solid 1px #b3aca7; }
   .hero #submit:hover {
     color: #4F4E4E; }
+  .hero #ip {
+    display: none;
+  }
 
     

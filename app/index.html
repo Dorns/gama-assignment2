@@ -11,6 +11,7 @@
     <title>Assignment 2</title>
 </head>
 <body>
+
     <div class="hero">
 
         <div id="title" class="is-loading">
@@ -24,8 +25,8 @@
                 <form id="form" class="topBefore" onsubmit="formController.add(event)">
 
                         <select id="status" name="status">
-                            <option value="contratante">Contratante</option>
-                            <option value="candidato">Candidato</option>
+                            <option value="B2C">Contratante</option>
+                            <option value="B2B">Candidato</option>
                         </select>
 		
                         <input id="name" type="text" placeholder="Nome Completo"
@@ -48,11 +49,12 @@
                         <textarea id="leadsFirst" type="text" name="leadsFirst" placeholder="Você já teve problema com análise de competências técnicas em um processo seletivo?"></textarea>
                         <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou ou está lidando com isso?"></textarea>
                         <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal para resolver isso?"></textarea>
-
+                        <textarea id="ip" type="text" name="ip"></textarea>
                         <input id="submit" type="submit" value="Enviar!">
-                    
+
                   </form>
-    
+
+
     <script src="js/app/models/Form.js"></script>
     <script src="js/app/controllers/FormController.js"></script>
     <script src="js/app/models/FormList.js"></script>
@@ -60,6 +62,14 @@
     <script src="js/app/views/InputView.js"></script>
     <script src="js/app/models/Message.js"></script>
     <script src="js/app/views/SuccessView.js"></script>
+    <script type="application/javascript">
+        function getIP(json) {
+          document.getElementById("ip").innerHTML = json.ip;
+        }
+        </script>
+        <script type="application/javascript" 
+                src="http://api.ipify.org?format=jsonp&callback=getIP">
+        </script>
     <script>
         let formController = new FormController();
     </script>
