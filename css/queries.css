@@ -29,8 +29,9 @@
   }
 
   .conteudoDepoimento-conteudo p {
-    max-width: 96%;
-    margin-left: 2%;
+    max-width: 85%;
+    margin-left: 10%;
+    margin-right: 15%;
   }
 
   .conteudoRodape {
