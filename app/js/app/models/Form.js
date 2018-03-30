@@ -1,9 +1,9 @@
 //FORM CONSTRUCTOR AND METHODS
 class Form {
     
-    constructor(status, name, email, leadsFirst, leadsSecond, leadsThird, ip, currentDate) {
+    constructor(persona, name, email, leadsFirst, leadsSecond, leadsThird, ip, currentDate) {
 
-        this._status = status;
+        this._persona = persona;
         this._name = name;
         this._email = email;
         this._leadsFirst = leadsFirst;
@@ -14,8 +14,8 @@ class Form {
         Object.freeze(this);
     }
 
-    get status() {
-        return this._status;
+    get persona() {
+        return this._inputPersona;
     }
 
     get name() {

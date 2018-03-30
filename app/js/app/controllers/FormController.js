@@ -4,7 +4,7 @@ class FormController {
 
         //FORM MAKER
         let $ = document.querySelector.bind(document);
-        this._inputStatus = $('#status');
+        this._inputPersona = $('#persona');
         this._inputName = $('#name');
         this._inputEmail = $('#email');
         this._inputLeadsFirst = $('#leadsFirst');
@@ -36,7 +36,7 @@ class FormController {
 
         //CREATE FORM
         return new Form(
-            this._inputStatus.value,
+            this._inputPersona.value,
             this._inputName.value,
             this._inputEmail.value,
             this._inputLeadsFirst.value,
@@ -50,7 +50,7 @@ class FormController {
     _clearForm() {
 
         //CLEAR FORM
-        this._inputStatus.value = '';
+        this._inputPersona.value = '';
         this._inputName.value = '';
         this._inputEmail.value = '';
         this._inputLeadsFirst.value = '';
