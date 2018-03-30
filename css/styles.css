@@ -14,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
 }
 
 .hero {
@@ -26,6 +27,26 @@ body {
   background-position: center, center;
   border-top: 5px solid #366dbf;
   justify-content: space-around;
+}
+
+.conteudoCabecalho-botao {
+  padding: 10px 40px;
+  width: 150px;
+  height: 45px;
+  margin: 0px 10px 10px 0px;
+  border-radius: 5px;
+  color: #FFF;
+  font-size: 0.7rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #5790e6;
+  border: none;
+  border-bottom: 5px solid #8fb6ef;
+  font-family: neris-thin;
+}
+
+.conteudoCabecalho-botao:active {
+  transform: translate(0px, 5px);
+  border-bottom: 1px solid;
 }
 
 .text {
@@ -62,6 +83,7 @@ body {
   color: white;
   font-size: 0.8rem;
   margin: 2px 0;
+  width: 240px;
 }
 
 .hero input::placeholder {
@@ -91,7 +113,6 @@ body {
 }
 
 .hero #form {
-  position: relative;
   width: 280px;
 }
 
@@ -148,7 +169,7 @@ select {
 
 .action-button:active {
   transform: translate(0px, 5px);
-  border-bottom: 1px solid;
+  border-bottom: 2px solid;
 }
 
 .hero #ip {
@@ -208,7 +229,7 @@ select {
   font-weight: bold; 
   width: 500px;
   text-align: left;
-  margin-right: 530px;
+  margin-right: 15%;
 }
 
 .conteudoDepoimento-conteudo {
@@ -220,7 +241,8 @@ select {
   border-radius: 50%;
   height: 200px;
   width: 200px;
-  margin-left: 500px;
+  margin-left: 36%;
+  margin-right: 25px;
 }
 
 .conteudoRodape {

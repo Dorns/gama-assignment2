@@ -1,8 +1,83 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 1023px) {
-    .text {
-        display: none;
-    }
-    .hero form {
-        margin: 60px 0;
-    }
+  .conteudoCabecalho {
+    flex-direction: column;
+  }
+
+  .conteudoCabecalho-logo {
+    margin: 0;
+  }
+
+  .conteudoCabecalho-logo img {
+    max-width: 96%;
+  }
+
+  .conteudoCabecalho-conteudo {
+    margin: 0px 10px 0 0;
+  }
+
+  .conteudoCabecalho-conteudo h2 {
+    margin-left: 10px;
+  }
+
+  .conteudoCabecalho-conteudo p {
+    margin: 0 10px 0 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .text {
+    margin: 0 0 15px 0;
+    width: 75%;
+  }
+
+  .hero #form {
+    width: 96%;
+    margin: 0 0 15px 0;
+  }
+
+  .hero select {
+    width: 96%;
+  }
+
+  .hero input {
+    width: 96%;
+  }
+
+  .hero p {
+    width: 96%;
+  }
+
+  .hero textarea {
+    width: 96%;
+  }
+
+  .hero #submit {
+    width: 96%;
+  }
+  
+  .conteudoDepoimento-conteudo {
+    flex-direction: column;
+  }
+
+  .conteudoDepoimento-conteudo p {
+    max-width: 96%;
+    margin-left: 2%;
+  }
+
+  .conteudoRodape {
+    flex-direction: column;
+  }
+
+  .conteudoDepoimento-img {
+    margin-right: 25%;
+    margin-left: 30%;
+  }
+
+  .conteudoCabecalho-botao {
+    width: 90%;
+    margin: 10% 0 0 5%;
+  }
 }
