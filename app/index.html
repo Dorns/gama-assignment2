@@ -19,17 +19,20 @@
             <img src="images/logo.png" alt="Logotipo">
         </div>
         <div class="conteudoCabecalho-conteudo">
-            <h2>Gerenciamento <span>Inteligente</span> de Pessoas</h2>
-            <p>Nós trazemos uma riqueza de experiência no setor, o que nos permite ser o seu parceiro de Gerenciamento Inteligente de Pessoas, para impulsionar o desempenho e aumentar as receitas.</p>
-            <button class="conteudoCabecalho-botao">GET SMART!</button>
+            <p>Já participou de um processo seletivo e não sabia o que a empresa esperava exatamente de você?
+            E você, contratante? <br> Já selecionou um candidato e se decepcionou com as competências que ele apresentava?
+            </p>
+            
+            <h2><span>Vamos te ajudar a</span> mudar! </h2>
+            <a href="#form"><button  class="conteudoCabecalho-botao action-button">GET SMART!</button></a>
         </div>
     </header>
 
     <main class="hero">
 
         <div class="text">
-            <span>Lorem ipsum,</span> dolor sit amet consectetur adipisicing elit. Sequi harum consequuntur distinctio recusandae
-            obcaecati.
+            <p id="heroText">Um processo de seleção é algo difícil tanto para o candidato quanto para o recrutador. Por isso ser organizado, assertivo e transparente é melhor para ambas as partes.  A grande dificuldade durante um  processo para a área de marketing é avaliar as competências técnicas.  Pensando nisso, nós da  (empresa escolhida) queremos saber de você quais são as principais dificuldades encontradas por você durante um processo seletivo.</p>
+            <h2 id="heroTextBold"> <span>Preencha este formulário,</span> com as suas experiência e soluções, assim conseguiremos mudar a realidade!</h2>
         </div>
 
         <form id="form" class="topBefore" onsubmit="formController.add(event)">
@@ -47,12 +50,14 @@
             pattern="(.*)\s(.*)" 
             oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
             oninput="setCustomValidity('')"
+            autocomplete='name'
             required>
 
             <input id="email" type="email" placeholder="E-Mail"
             pattern="(.*)+@(.*)+\.(.*)"
             oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
             oninput="setCustomValidity('')"
+            autocomplete='email'
             required>
 
             <p>Você já teve problema com análise
