@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exportar leads</title>
+</head>
+<body>
+
+  <main>
+    <section>
+      <div class="table" id="results"></div>
+      <a href="" download="content.csv" id="export">Exportar</a>
+    </section>
+  </main>
+
+  <script type="text/javascript" src="js/app/views/Views.js"></script>
+  <script type="text/javascript" src="js/app/views/Table.js"></script>
+  <script type="text/javascript" src="js/app/models/Export.js"></script>
+  <script type="text/javascript" src="js/app/controllers/Database.js"></script>
+  <script type="text/javascript" src="js/app/controllers/Table.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+
+  <script>
+
+  	firebase.initializeApp({
+  	    apiKey            : "AIzaSyAfITZErtagRBeWxgBbyPx_Xma4J1tZUm0",
+  	    authDomain        : "xpgama12.firebaseapp.com",
+  	    databaseURL       : "https://xpgama12.firebaseio.com",
+  	    projectId         : "xpgama12",
+  	    storageBucket     : "xpgama12.appspot.com",
+  	    messagingSenderId : "277742595077"
+    });
+
+    let Table = new TableCtrl();
+  </script>
+
+</body>
+</html>
