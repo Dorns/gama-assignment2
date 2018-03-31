@@ -10,7 +10,7 @@ class TableCtrl {
     this._export = new Export();
 
 
-    this._db = new Database('https://xpgama12.firebaseio.com/', 'news', {
+    this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
       onAppend: data => {
         this.append(data.key, data.val());
         this._view.update(this._data);
