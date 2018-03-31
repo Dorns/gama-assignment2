@@ -3,105 +3,82 @@
     flex-direction: column;
     text-align: center;
   }
-
   .conteudoCabecalho-logo {
     margin: 0;
   }
-
   .conteudoCabecalho-logo img {
     max-width: 96%;
   }
-
   .conteudoCabecalho-conteudo {
     margin: 0px 10px 0 0;
   }
-
   .conteudoCabecalho-conteudo h2 {
     margin: 20px 10px;
   }
-
   .conteudoCabecalho-conteudo p {
     margin: 0 10px 0 10px;
   }
-
   .conteudoDepoimento-conteudo {
     flex-direction: column;
   }
-
   .conteudoDepoimento-conteudo p {
     max-width: 85%;
     margin-left: 10%;
     margin-right: 15%;
   }
-
   .conteudoRodape {
     flex-direction: column;
   }
-
   .conteudoDepoimento-img {
     margin-right: 25%;
     margin-left: 30%;
   }
-
   .conteudoCabecalho-botao {
     width: 90%;
     margin: 5% 0 0 5%;
   }
-
   .hero {
     flex-direction: column;
     max-width: 100%;
   }
-
   .text {
     margin: 30px 0 30px 0;
     width: 75%;
     text-align: center;
   }
-
   .hero #form {
     width: 92%;
     margin: 0 0 15px 0;
   }
-
   .hero select {
     width: 92%;
   }
-
   .hero input {
     width: 92%;
   }
-
   .hero p {
     width: 96%;
   }
-
   #heroTextBold {
     margin-top: 18px;
   }
-
   .hero textarea {
     width: 92%;
   }
-
   .hero #submit {
     width: 92%;
     margin: 10px 0 10px 0px;
-
   }
-
   .obrigado h2 {
     font-family: neris-light;
     font-size: 3rem;
     color: white;
     margin: 0 0 10px 0;
   }
-  
   .obrigado h3 {
     font-family: neris-thin;
     font-size: 1rem;
     color: white;
     margin: 0 30px;
   }
-  
 }

@@ -59,7 +59,7 @@
         </div>
     </header>
 
-    <main class="hero">
+    <main id="hero" class="hero heroSubmit">
 
         <div class="text">
             <p id="heroText">Um processo de seleção é algo difícil tanto para o candidato quanto para o recrutador. Por isso ser organizado,
@@ -75,7 +75,7 @@
             <h2>Pesquisa</h2>
             <div id="successView"></div>
 
-            <select id="persona" name="persona">
+            <select id="persona" name="persona" required>
                 <option value="" disabled selected>Selecione Uma Opção</option>
                 <option value="contratante">Sou Contratante</option>
                 <option value="contratante">Sou Contratado</option>
@@ -91,32 +91,31 @@
                 <br> de competências técnicas
                 <br> em um processo seletivo?</p>
 
-            <select id="leadsFirst" name="leadsFirst">
+            <select id="leadsFirst" name="leadsFirst" required>
                 <option value="" disabled selected>Selecione Uma Opção</option>
                 <option value="sim">Sim</option>
                 <option value="nao">Nao</option>
             </select>
 
-            <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou&#10; ou está lidando com isso?"></textarea>
-            <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal&#10; para resolver isso?"></textarea>
+            <textarea id="leadsSecond" type="text" name="leadsSecond" placeholder="Como você lidou&#10; ou está lidando com isso?" required></textarea>
+            <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal&#10; para resolver isso?"
+                required></textarea>
             <textarea id="ip" type="text" name="ip"></textarea>
             <input class="action-button" id="submit" type="submit" value="Enviar">
 
         </form>
     </main>
 
-    <section class="obrigado">
+    <section id="obrigado" class="obrigado submit">
 
-     <img src="./images/HR_icon.png" alt="">
+        <img src="./images/HR_icon.png" alt="">
 
         <div class="obrigadoTexto">
 
             <h2>Obrigado!</h2>
 
-            <h3>Suas informações serão muito importantes para
-            consolidarmos um novo formato de seleção de
-            profissionais para o mercado digital, e não serão
-            compartilhadas nem divulgadas publicamente</h3>
+            <h3>Suas informações serão muito importantes para consolidarmos um novo formato de seleção de profissionais para
+                o mercado digital, e não serão compartilhadas nem divulgadas publicamente</h3>
 
         </div>
 
@@ -157,16 +156,12 @@
     <script src="js/app/models/Form.js"></script>
     <script src="js/app/controllers/FormController.js"></script>
     <script src="js/app/models/FormList.js"></script>
-    <script src="js/app/views/Views.js"></script>
-    <script src="js/app/models/Message.js"></script>
-    <script src="js/app/views/SuccessView.js"></script>
     <script type="application/javascript">
         function getIP(json) {
             document.getElementById("ip").innerHTML = json.ip;
         }
     </script>
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
-    </script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script>
         let formController = new FormController();
     </script>
