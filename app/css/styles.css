@@ -8,6 +8,16 @@
   src: url("../font/Neris-Thin.otf") format("opentype");
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -19,47 +29,70 @@ body {
 
 .conteudoCabecalho {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   font-family: neris-thin;
   background-image: url("../images/fundo_banner_1.jpg");
   background-size: cover;
-  padding-top: 20%;
-  padding-bottom: 20%;
   background-repeat: no-repeat;
   color: #FFF;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
-.conteudoCabecalho-logo {
-  margin-left: 25%;
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  width: 95%;
+  height: 100%;
+  align-items: center;
+  margin: auto;
+}
+
+.container .conteudoCabecalho-texto {
+  position: relative;
+  transform: translateY(82px);
+}
+
+.container .conteudoCabecalho-titulo h2 {
+  margin-bottom: 20px;
 }
 
 .conteudoCabecalho-conteudo {
-  /* margin-right: 12%; */
+  position: absolute;
+  bottom: 100%;
 }
 
-.conteudoCabecalho-conteudo h2 {
+.container .conteudoCabecalho-conteudo h2 {
   font-family: neris-light;
-  font-size: 2rem;
-  margin-top: 0;
+  font-size: 29px;
+  margin-top: 25px;
+}
+
+.container h2 {
+  font-family: neris-light;
   font-size: 45px;
-  margin-top: 0;
 }
 
-.conteudoCabecalho-conteudo p {
-  margin-right: 30%;
-  margin-bottom: 0;
+.container span {
+  font-family: neris-thin;
+  font-weight: normal;
 }
 
-.conteudoCabecalho span {
+.conteudoCabecalho-logo {
+  display: flex;
+}
+
+.conteudoCabecalho-conteudo {
   font-family: neris-thin;
 }
 
 .conteudoCabecalho-botao {
-  padding: 10px 40px;
+  padding: 0px 40px;
   width: 200px;
-  height: 55px;
+  line-height: 55px;
+  text-align: center;
   margin: 0px 10px 10px 0px;
   border-radius: 10px;
   color: #FFF;
@@ -67,7 +100,7 @@ body {
   font-family: neris-light;
   font-weight: bold;
   background-color: rgb(45, 104, 192);
-  ;
+  display: block;
   border: none;
   border-bottom: 5px solid rgb(73, 190, 174);
   font-family: neris-light;
@@ -208,9 +241,10 @@ select {
   font-size: 0.8rem;
   font-family: neris-light;
   font-weight: bold;
-  background-color: #4F4E4E;
+  background-color: #8bb209;
   border: none;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #4a5f04;
+  color: #FFF;
 }
 
 .heroSubmit {
@@ -262,37 +296,6 @@ select {
   display: none;
 }
 
-.conteudoDepoimento {
-  font-family: neris-thin;
-  margin-bottom: 150px;
-}
-
-.conteudoDepoimento h2 {
-  color: #4F4E4E;
-  text-align: center;
-  font-size: 45px;
-}
-
-.conteudoDepoimento p {
-  color: #5790e6;
-  font-weight: bold;
-  width: 500px;
-  margin-right: 15%;
-}
-
-.conteudoDepoimento-conteudo {
-  display: flex;
-  justify-content: space-around;
-}
-
-.conteudoDepoimento-img {
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
-  margin-left: 36%;
-  margin-right: 25px;
-}
-
 .conteudoRodape {
   background-color: #4F4E4E;
   color: #c0bfbf;
@@ -302,6 +305,7 @@ select {
   padding-top: 2%;
   padding-bottom: 2%;
   font-family: neris-light;
+  flex-direction: column;
 }
 
 a:link,
@@ -310,13 +314,4 @@ a:hover,
 a:active {
   text-decoration: none;
   color: white;
-}
-
-.conteudoDepoimento-nome {
-  text-align: right;
-  margin-top: 0;
-}
-
-.conteudoDepoimento-texto {
-  text-align: left;
 }

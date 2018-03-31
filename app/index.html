@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -43,19 +43,21 @@
 <body>
 
     <header class="conteudoCabecalho">
-        <div class="conteudoCabecalho-logo">
+        <div class="container">
             <img src="images/logo.png" alt="Logotipo">
-        </div>
-        <div class="conteudoCabecalho-conteudo">
-            <p>Já participou de um processo seletivo e não sabia o que a empresa esperava exatamente de você? E você, contratante?
-                <br> Já selecionou um candidato e se decepcionou com as competências que ele apresentava?
-            </p>
 
-            <h2>
-                <span>Vamos te ajudar a</span> mudar! </h2>
-            <a href="#form">
-                <button class="conteudoCabecalho-botao action-button">QUERO MUDAR!</button>
-            </a>
+            <div class="conteudoCabecalho-texto">
+                <div class="conteudoCabecalho-titulo">
+                    <h2><span>Vamos te ajudar a</span> mudar!</h2>
+                    <a href="javascript:void(0);" class="conteudoCabecalho-botao action-button">QUERO MUDAR!</a>
+                </div>
+                <div class="conteudoCabecalho-conteudo">
+                    <h2>Candidato</h2>
+                    <p>Já participou de um processo seletivo e não sabia o que a empresa esperava exatamente de você?</p>
+                    <h2>Empresa</h2>
+                    <p>Já selecionou um candidato e se decepcionou com as competências que ele apresentava?</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -77,8 +79,8 @@
 
             <select id="persona" name="persona" required>
                 <option value="" disabled selected>Selecione Uma Opção</option>
-                <option value="contratante">Sou Contratante</option>
-                <option value="contratante">Sou Contratado</option>
+                <option value="0">Sou Contratante</option>
+                <option value="1">Sou Contratado</option>
             </select>
 
             <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
@@ -101,7 +103,7 @@
             <textarea id="leadsThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal&#10; para resolver isso?"
                 required></textarea>
             <textarea id="ip" type="text" name="ip"></textarea>
-            <input class="action-button" id="submit" type="submit" value="Enviar">
+            <input class="action-button" id="submit" type="submit" value="ENVIAR">
 
         </form>
     </main>
@@ -121,30 +123,6 @@
 
     </section>
 
-    <section class="conteudoDepoimento">
-        <h2>Depoimentos</h2>
-        <div class="conteudoDepoimento-conteudo">
-            <div>
-                <img class="conteudoDepoimento-img" src="images/roger.jpg" alt="uma pessoa">
-                <p class="conteudoDepoimento-texto">A HRTECH Recruta mudou a minha vida! Sempre tinha dificuldade em me preparar para entrevistas, isso é coisa
-                    do passado!</p>
-                <p class="conteudoDepoimento-nome">Rogério Costa</p>
-            </div>
-            <div>
-                <img class="conteudoDepoimento-img" src="images/samantha.jpg" alt="uma pessoa">
-                <p class="conteudoDepoimento-texto">Já escolhi o candidato errado muitas vezes nos meus processos seletivos, mas depois que conheci a HRTECH
-                    Recruta isso não foi mais um problema!</p>
-                <p class="conteudoDepoimento-nome">Samantha Ribeiro</p>
-            </div>
-            <div>
-                <img class="conteudoDepoimento-img" src="images/sophia.jpg" alt="uma pessoa">
-                <p class="conteudoDepoimento-texto">A área de Marketing sempre tem problemas em processos de seleção. Seja por parte do contratado, como do contratante.
-                    A HRTECH Recruta chegou para mudar essa situação!</p>
-                <p class="conteudoDepoimento-nome">Sophia Ambrosio</p>
-            </div>
-        </div>
-    </section>
-
     <footer class="conteudoRodape">
         <small>Copyright © 2018 | HR TECH | All Rights Reserved</small>
         <small>
@@ -153,9 +131,11 @@
         </small>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="js/app/models/Form.js"></script>
     <script src="js/app/controllers/FormController.js"></script>
     <script src="js/app/models/FormList.js"></script>
+    <script src="js/app/index.js"></script>
     <script type="application/javascript">
         function getIP(json) {
             document.getElementById("ip").innerHTML = json.ip;
