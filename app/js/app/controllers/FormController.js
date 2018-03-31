@@ -13,10 +13,9 @@ class FormController {
         this._ip = $('#ip');
         this._currentDate = new Date().toLocaleString();
         this._formList = new FormList();
-        //MESSAGE MAKER
-        this._mensagem = new Message();
-        this._successView = new SuccessView($('#successView'));
-        this._successView.update(this._mensagem);
+        //CHANGE MAKER
+        this._obrigado = $('#obrigado')
+        this._hero = $('#hero');
 
     }
 
@@ -25,10 +24,9 @@ class FormController {
         //ADD FORM
         event.preventDefault();
         this._formList.add(this._createForm());
-        //ADD MESSAGE
-        this._mensagem.texto = 'Cadastro Efetuado com Sucesso';
-        this._successView.update(this._mensagem);
-        this._clearForm();
+        //CHANGE HERO FOR OBRIGADO
+        this._obrigado.classList.remove("submit");
+        this._hero.classList.remove('hero');
 
     }
 
@@ -45,18 +43,6 @@ class FormController {
             this._ip.value,
             this._currentDate,
         );
-    }
-
-    _clearForm() {
-
-        //CLEAR FORM
-        this._inputPersona.value = '';
-        this._inputName.value = '';
-        this._inputEmail.value = '';
-        this._inputLeadsFirst.value = '';
-        this._inputLeadsSecond.value = '';
-        this._inputLeadsThird.value = '';
-        this._inputStatus.focus();
     }
 
 }
