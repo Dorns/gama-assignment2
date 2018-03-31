@@ -9,6 +9,34 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css ">
     <link rel="stylesheet" type="text/css" href="./css/queries.css ">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116702280-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-116702280-1');
+    </script>
+    <!--JB Tracker-->
+    <script type="text/javascript">
+        var _paq = _paq || [];
+        (function () {
+            _paq.push(['clientToken', 'l%2bpHLJFDEjbAND5vzrdqV182xeuH%2f8ye9cr29rL%2fPp%2ftRCX9CKKjO4Tw28WcgZnQ']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = 'https://prod.benchmarkemail.com/tracker.bundle.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!--/JB Tracker-->
     <title>Assignment 2</title>
 </head>
 
@@ -19,20 +47,27 @@
             <img src="images/logo.png" alt="Logotipo">
         </div>
         <div class="conteudoCabecalho-conteudo">
-            <p>Já participou de um processo seletivo e não sabia o que a empresa esperava exatamente de você?
-            E você, contratante? <br> Já selecionou um candidato e se decepcionou com as competências que ele apresentava?
+            <p>Já participou de um processo seletivo e não sabia o que a empresa esperava exatamente de você? E você, contratante?
+                <br> Já selecionou um candidato e se decepcionou com as competências que ele apresentava?
             </p>
-            
-            <h2><span>Vamos te ajudar a</span> mudar! </h2>
-            <a href="#form"><button  class="conteudoCabecalho-botao action-button">GET SMART!</button></a>
+
+            <h2>
+                <span>Vamos te ajudar a</span> mudar! </h2>
+            <a href="#form">
+                <button class="conteudoCabecalho-botao action-button">QUERO MUDAR!</button>
+            </a>
         </div>
     </header>
 
     <main class="hero">
 
         <div class="text">
-            <p id="heroText">Um processo de seleção é algo difícil tanto para o candidato quanto para o recrutador. Por isso ser organizado, assertivo e transparente é melhor para ambas as partes.  A grande dificuldade durante um  processo para a área de marketing é avaliar as competências técnicas.  Pensando nisso, nós da  (empresa escolhida) queremos saber de você quais são as principais dificuldades encontradas por você durante um processo seletivo.</p>
-            <h2 id="heroTextBold"> <span>Preencha este formulário,</span> com as suas experiência e soluções, assim conseguiremos mudar a realidade!</h2>
+            <p id="heroText">Um processo de seleção é algo difícil tanto para o candidato quanto para o recrutador. Por isso ser organizado,
+                assertivo e transparente é melhor para ambas as partes. A grande dificuldade durante um processo para a área
+                de marketing é avaliar as competências técnicas. Pensando nisso, nós da (empresa escolhida) queremos saber
+                de você quais são as principais dificuldades encontradas por você durante um processo seletivo.</p>
+            <h2 id="heroTextBold">
+                <span>Preencha este formulário,</span> com as suas experiência e soluções, assim conseguiremos mudar a realidade!</h2>
         </div>
 
         <form id="form" class="topBefore" onsubmit="formController.add(event)">
@@ -40,25 +75,17 @@
             <h2>Pesquisa</h2>
             <div id="successView"></div>
 
-            <select id="status" name="status">
+            <select id="persona" name="persona">
                 <option value="" disabled selected>Selecione Uma Opção</option>
-                <option value="B2B">Sou Contratante</option>
-                <option value="B2C">Sou Candidato</option>
+                <option value="contratante">Sou Contratante</option>
+                <option value="contratante">Sou Contratado</option>
             </select>
 
-            <input id="name" type="text" placeholder="Nome Completo"
-            pattern="(.*)\s(.*)" 
-            oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
-            oninput="setCustomValidity('')"
-            autocomplete='name'
-            required>
+            <input id="name" type="text" placeholder="Nome Completo" pattern="(.*)\s(.*)" oninvalid="this.setCustomValidity('Favor Inserir Nome Completo')"
+                oninput="setCustomValidity('')" autocomplete='name' required>
 
-            <input id="email" type="email" placeholder="E-Mail"
-            pattern="(.*)+@(.*)+\.(.*)"
-            oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
-            oninput="setCustomValidity('')"
-            autocomplete='email'
-            required>
+            <input id="email" type="email" placeholder="E-Mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
+                oninput="setCustomValidity('')" autocomplete='email' required>
 
             <p>Você já teve problema com análise
                 <br> de competências técnicas
@@ -81,37 +108,51 @@
     <section class="conteudoDepoimento">
         <h2>Depoimentos</h2>
         <div class="conteudoDepoimento-conteudo">
-            <img class="conteudoDepoimento-img" src="images/roger.jpg" alt="uma pessoa">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum, 
-            purus vitae accumsan varius, neque dolor tristique metus, in sodales nulla urna sed est. 
-            Nam in pharetra ante.
-            </p>
+            <div>
+                <img class="conteudoDepoimento-img" src="images/roger.jpg" alt="uma pessoa">
+                <p class="conteudoDepoimento-texto">A HRTECH Recruta mudou a minha vida! Sempre tinha dificuldade em me preparar para entrevistas, isso é coisa
+                    do passado!</p>
+                <p class="conteudoDepoimento-nome">Rogério Costa</p>
+            </div>
+            <div>
+                <img class="conteudoDepoimento-img" src="images/samantha.jpg" alt="uma pessoa">
+                <p class="conteudoDepoimento-texto">Já escolhi o candidato errado muitas vezes nos meus processos seletivos, mas depois que conheci a HRTECH
+                    Recruta isso não foi mais um problema!</p>
+                <p class="conteudoDepoimento-nome">Samantha Ribeiro</p>
+            </div>
+            <div>
+                <img class="conteudoDepoimento-img" src="images/sophia.jpg" alt="uma pessoa">
+                <p class="conteudoDepoimento-texto">A área de Marketing sempre tem problemas em processos de seleção. Seja por parte do contratado, como do contratante.
+                    A HRTECH Recruta chegou para mudar essa situação!</p>
+                <p class="conteudoDepoimento-nome">Sophia Ambrosio</p>
+            </div>
         </div>
     </section>
 
     <footer class="conteudoRodape">
         <small>Copyright © 2018 | HR TECH | All Rights Reserved</small>
         <small>
-            <a href="#">Terms of service</a>|<a href="#">Privacy Policy</a>
+            <a href="#">Terms of service</a>|
+            <a href="#">Privacy Policy</a>
         </small>
     </footer>
 
-        <script src="js/app/models/Form.js"></script>
-        <script src="js/app/controllers/FormController.js"></script>
-        <script src="js/app/models/FormList.js"></script>
-        <script src="js/app/views/Views.js"></script>
-        <script src="js/app/models/Message.js"></script>
-        <script src="js/app/views/SuccessView.js"></script>
-        <script type="application/javascript">
-            function getIP(json) {
-                document.getElementById("ip").innerHTML = json.ip;
-            }
-        </script>
-        <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
-        </script>
-        <script>
-            let formController = new FormController();
-        </script>
+    <script src="js/app/models/Form.js"></script>
+    <script src="js/app/controllers/FormController.js"></script>
+    <script src="js/app/models/FormList.js"></script>
+    <script src="js/app/views/Views.js"></script>
+    <script src="js/app/models/Message.js"></script>
+    <script src="js/app/views/SuccessView.js"></script>
+    <script type="application/javascript">
+        function getIP(json) {
+            document.getElementById("ip").innerHTML = json.ip;
+        }
+    </script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
+    </script>
+    <script>
+        let formController = new FormController();
+    </script>
 </body>
 
 </html>

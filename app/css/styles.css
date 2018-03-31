@@ -238,7 +238,6 @@ select {
   color: #5790e6;
   font-weight: bold; 
   width: 500px;
-  text-align: left;
   margin-right: 15%;
 }
 
@@ -269,5 +268,14 @@ select {
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: white;
+}
+
+.conteudoDepoimento-nome {
+  text-align: right;
+  margin-top: 0;
+}
+
+.conteudoDepoimento-texto {
+  text-align: left;
 }
 
