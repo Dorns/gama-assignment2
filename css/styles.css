@@ -222,6 +222,32 @@ select {
   display: none;
 }
 
+.obrigado {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  justify-content: center;
+  background-image: url("../images/fundo_obrigado.jpg");
+  background-size: cover;
+  background-position: center, center;
+}
+
+.obrigado h2 {
+  font-family: neris-light;
+  font-size: 6rem;
+  color: white;
+  margin: 0 0 10px 0;
+}
+
+.obrigado h3 {
+  font-family: neris-thin;
+  font-size: 2rem;
+  color: white;
+  margin: 0 320px;
+}
 
 .conteudoDepoimento {
   font-family: neris-thin;

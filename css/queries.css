@@ -89,5 +89,19 @@
     margin: 10px 0 10px 0px;
 
   }
+
+  .obrigado h2 {
+    font-family: neris-light;
+    font-size: 3rem;
+    color: white;
+    margin: 0 0 10px 0;
+  }
+  
+  .obrigado h3 {
+    font-family: neris-thin;
+    font-size: 1rem;
+    color: white;
+    margin: 0 30px;
+  }
   
 }
