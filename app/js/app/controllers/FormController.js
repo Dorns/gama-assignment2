@@ -56,7 +56,6 @@ class FormController {
         this._inputLeadsFirst.value = '';
         this._inputLeadsSecond.value = '';
         this._inputLeadsThird.value = '';
-        this._ip.value = '';
         this._inputStatus.focus();
     }
 
