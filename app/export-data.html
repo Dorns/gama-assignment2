@@ -9,12 +9,42 @@
 </head>
 <body>
 
-<div class="container">
-  <!-- Content here -->
-    <section>
-      <a href="" id="export">Exportar</a>
-      <div id="results"></div>
-    </section>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container-fluid">
+    <!-- Content here -->
+
+    <div class="row">
+      <div class="col-sm-2 offset-sm-2">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Persona</label>
+          <select class="form-control" id="selectPersona">
+            <option value="0">Contratante</option>
+            <option value="1">Contratado</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-sm-8 offset-sm-2">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Leads</h2>
+            
+          </div>
+          <div class="card-body">
+            
+            <div  id="results"></div>
+            <a href="" id="export" class="btn btn-primary">Exportar</a>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <p id="total-rows"></p>
+          <p id="updated-time"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
   <script type="text/javascript" src="js/app/views/Views.js"></script>
