@@ -136,6 +136,15 @@ body {
   font-size: 1.2rem;
   color: white;
   margin-bottom: 25px;
+  width: 330px;
+}
+
+#heroTextSecond {
+    font-family: neris-thin;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 25px;
+    width: 330px;
 }
 
 #heroTextBold {

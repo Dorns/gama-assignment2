@@ -55,6 +55,11 @@
 
   #heroText {
     margin: 25px 0 20px 0;
+    width: 100%;
+  }
+
+  #heroTextSecond{
+    width: 100%;
   }
 
   .conteudoCabecalho-botao {
@@ -86,7 +91,6 @@
   }
   .hero p {
     width: 100%;
-    padding: 15px 15px 5px 15px;
   }
   #heroTextBold {
     margin-top: 18px;
