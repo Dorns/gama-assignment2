@@ -8,7 +8,7 @@ class TableCtrl {
     this._filterData = {};
 
     this._table = $("#results");
-    this._link  = $("#export");
+    this._links  = document.querySelectorAll("a.export");
 
     this._view   = new TableView(this._table);
     this._export = new Export();
@@ -57,20 +57,19 @@ class TableCtrl {
       return this._filterData = this._data;
     }
     this._filterData = Object.entries(this._data).reduce((obj, entry)=>{
-      let key  = entry[0],
-          item = entry[1];
+      let key  = entry[0], item = entry[1];
       if(
         (item._persona == this.persona || this.persona == "") &&
-        (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 && this.name != "") || 
-        (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 && this.email != "")) {
+        (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 || this.name == "") && 
+        (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 || this.email == "")) {
         obj[key] = item
       };
       return obj;
     }, {});
   }
 
-  _setupLink (link){
-    link.href = this._data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(this._filterData);
+  _setupLink (format, link){
+    link.href = this._data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(format, this._filterData);
     this._data.length < 1 ? link.removeAttribute('download') : link.download = 'results.csv';
   }
 
@@ -89,7 +88,8 @@ class TableCtrl {
   _update (){
     this._filter();
     this._view.update(this._filterData);
-    this._setupLink(this._link);
+    this._setupLink(0, this._links[0]);
+    this._setupLink(1, this._links[1]);
     this._setTotalRows();
   }
 
