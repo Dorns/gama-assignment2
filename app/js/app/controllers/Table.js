@@ -20,6 +20,7 @@ class TableCtrl {
     this._selectPersona.addEventListener('change', event => {
       this._filterByPersona(event.target.value)
       this._view.update(this._filterData);
+      this._setupLink(this._link);
       this._setTotalRows();
     });
     
