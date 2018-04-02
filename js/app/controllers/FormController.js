@@ -7,15 +7,16 @@ class FormController {
         this._inputPersona = $('#persona');
         this._inputName = $('#name');
         this._inputEmail = $('#email');
-        this._inputLeadsFirst = $('#leadsFirst');
-        this._inputLeadsSecond = $('#leadsSecond');
-        this._inputLeadsThird = $('#leadsThird');
+        this._inputQuestionFirst = $('#questionFirst');
+        this._inputQuestionSecond = $('#questionSecond');
+        this._inputQuestionThird = $('#questionThird');
         this._ip = $('#ip');
         this._currentDate = new Date().toLocaleString();
         this._formList = new FormList();
         //CHANGE MAKER
         this._obrigado = $('#obrigado')
         this._hero = $('#hero');
+        this._tipo = '';
 
     }
 
@@ -37,11 +38,12 @@ class FormController {
             this._inputPersona.value,
             this._inputName.value,
             this._inputEmail.value,
-            this._inputLeadsFirst.value,
-            this._inputLeadsSecond.value,
-            this._inputLeadsThird.value,
+            this._inputQuestionFirst.value,
+            this._inputQuestionSecond.value,
+            this._inputQuestionThird.value,
             this._ip.value,
             this._currentDate,
+            this._tipo,
         );
     }
 
