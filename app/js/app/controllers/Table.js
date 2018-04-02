@@ -37,7 +37,8 @@ class TableCtrl {
   }
 
   _setupLink (link){
-    link.href = data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(this._data);
+    link.href = this._data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(this._data);
+    this_data.length < 1 ? link.download = 'results.csv' : link.removeAttribute('download');
   }
 
 }
