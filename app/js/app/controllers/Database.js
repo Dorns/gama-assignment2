@@ -5,7 +5,6 @@ class Database {
     this._data = [];
     this._basePath = basePath;
     this._firebaseURL = firebaseURL;
-    // this.sync(basePath);
 
     if(typeof listeners.onAppend === 'function'){
       firebase.database().ref(this._basePath).on('child_added', listeners.onAppend);
