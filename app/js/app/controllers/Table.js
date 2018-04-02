@@ -37,7 +37,7 @@ class TableCtrl {
   }
 
   _setupLink (link){
-    link.href = this._export.toCSV(this._data);
+    link.href = data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(this._data);
   }
 
 }
