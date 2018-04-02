@@ -135,6 +135,7 @@ body {
   font-family: neris-thin;
   font-size: 1.2rem;
   color: white;
+  margin-bottom: 25px;
 }
 
 #heroTextBold {
@@ -200,6 +201,10 @@ body {
   margin-right: 220px;
 }
 
+#formText {
+  padding: 15px 15px 10px 15px;
+}
+
 .hero input,
 textarea,
 select {
@@ -241,7 +246,7 @@ select {
   padding: 10px 40px;
   width: 180px;
   height: 55px;
-  margin: 0px 10px 10px 0px;
+  margin: 10px;
   border-radius: 5px;
   color: #5790e6;
   font-size: 0.8rem;
