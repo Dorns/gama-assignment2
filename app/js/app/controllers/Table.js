@@ -7,48 +7,41 @@ class TableCtrl {
     this._data       = {};
     this._filterData = {};
 
-    this._table         = $("#results");
-    this._link          = $("#export");
+    this._table = $("#results");
+    this._link  = $("#export");
 
     this._view   = new TableView(this._table);
     this._export = new Export();
 
-    this._totalRows     = $('#total-rows');
-    this._updatedTime   = $('#updated-time');
+    this._totalRows   = $('#total-rows');
+    this._updatedTime = $('#updated-time');
 
-    this._selectPersona = $('#selectPersona');
-    this._selectPersona.addEventListener('change', event => {
-      this._filterByPersona(event.target.value)
-      this._view.update(this._filterData);
-      this._setupLink(this._link);
-      this._setTotalRows();
-    });
+    this._filters = {
+      name    : $('#inputName'),
+      email   : $('#inputEmail'),
+      persona : $('#selectPersona')
+    }
+
+    this._filters.name.addEventListener('keyup',e =>  this._update());
+    this._filters.email.addEventListener('keyup', e => this._update());
+    this._filters.persona.addEventListener('change', e => this._update());
     
     this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
       onAppend: data => {
         this.append(data.key, data.val());
-        this._filterByPersona(this.persona);
-        this._view.update(this._filterData);
-        this._setupLink(this._link);
-        this._setTotalRows();
+        this._update();
         this._setUpdatedTime();
       },
       onChange: ref => {
         this._data[ref.key] = ref.val();
-        this._filterByPersona(this.persona);
-        this._view.update(this._filterData);
-        this._setupLink(this._link);
-        this._setTotalRows();
+        this._update();
         this._setUpdatedTime();
       },
       onRemove: ref => {
         if(typeof this._data[ref.key] !== 'undefined'){
           delete this._data[ref.key];
         }
-        this._filterByPersona(this.persona);
-        this._view.update(this._filterData);
-        this._setupLink(this._link);
-        this._setTotalRows();
+        this._update();
         this._setUpdatedTime();
       }
     });
@@ -59,12 +52,21 @@ class TableCtrl {
       this._data[key] = data;
   }
 
-  _filterByPersona (persona){
-    this._filterData = Object.entries(this._data).reduce((value, entry)=>{
-      if(entry[1]._persona == persona) value[entry[0]] = entry[1];
-      return value;
+  _filter (){
+    if(this.name == "" && this.email == "" && this.persona == ""){
+      return this._filterData = this._data;
+    }
+    this._filterData = Object.entries(this._data).reduce((obj, entry)=>{
+      let key  = entry[0],
+          item = entry[1];
+      if(
+        (item._persona == this.persona && this.persona != "")   || 
+        (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 && this.name != "") || 
+        (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 && this.email != "")) {
+        obj[key] = item
+      };
+      return obj;
     }, {});
-    console.log(this._filterData)
   }
 
   _setupLink (link){
@@ -84,8 +86,23 @@ class TableCtrl {
     `;
   }
 
+  _update (){
+    this._filter();
+    this._view.update(this._filterData);
+    this._setupLink(this._link);
+    this._setTotalRows();
+  }
+
+  get name (){
+    return this._filters.name.value;
+  }
+
+  get email (){
+    return this._filters.email.value;
+  }
+
   get persona (){
-    return this._selectPersona.value;
+    return this._filters.persona.value;
   }
 
 }
