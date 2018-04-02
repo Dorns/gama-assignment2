@@ -22,7 +22,7 @@ class TableView extends Views {
               <tr>
                 <td>${data[1]._currentdate}</td>
                 <td>${data[1]._ip}</td>
-                <td>${data[1]._persona}</td>
+                <td>${data[1]._persona === 1 ? 'CONTRATANTE': 'CONTRATADO'}</td>
                 <td>${data[1]._name}</td>
                 <td>${data[1]._email}</td>
               </tr>
