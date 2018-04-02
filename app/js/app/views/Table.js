@@ -6,7 +6,7 @@ class TableView extends Views {
 
   template (model){
     return `
-      <table>
+      <table class="table table-striped">
           <thead>
             <tr>
               <th>Date</th>
