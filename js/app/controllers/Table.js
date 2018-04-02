@@ -60,7 +60,7 @@ class TableCtrl {
       let key  = entry[0],
           item = entry[1];
       if(
-        (item._persona == this.persona && this.persona != "")   || 
+        (item._persona == this.persona || this.persona == "") &&
         (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 && this.name != "") || 
         (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 && this.email != "")) {
         obj[key] = item
