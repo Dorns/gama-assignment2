@@ -48,7 +48,8 @@
 
             <div class="conteudoCabecalho-texto">
                 <div class="conteudoCabecalho-titulo">
-                    <h2><span>Vamos te ajudar a</span> mudar!</h2>
+                    <h2>
+                        <span>Vamos te ajudar a</span> mudar!</h2>
                     <a class="conteudoCabecalho-botao action-button">QUERO MUDAR!</a>
                 </div>
                 <div class="conteudoCabecalho-conteudo">
@@ -64,18 +65,27 @@
     <main id="hero" class="hero heroSubmit">
 
         <div class="text">
-            <p id="heroText">Um processo de seleção é algo difícil tanto para o candidato quanto para o recrutador. Por isso, ser organizado, assertivo e transparente é melhor para ambas as partes. A grande dificuldade durante um processo para a área de marketing é avaliar as competências técnicas. Pensando nisso, nós da HR Tech Recruta queremos saber de você quais são as principais dificuldades encontradas por você durante um processo seletivo.</p>
+            <p id="heroText">Você já ouviu falar do mercado de HR Tech? É um mercado composto pelas empresas que desenvolvem soluções tecnológicas
+                e inovadoras para o RH de empresas como a sua. Nós preparamos para você um documento gratuito contendo as
+                principais soluções tecnológicas do mercado internacional. Tecnologia e RH nunca estiveram tão conectados!
+            </p>
             <h2 id="heroTextBold">
-                <span>Preencha este formulário,</span> com as suas experiências e soluções, assim conseguiremos mudar a realidade!</h2>
-        </div>
+                Para ter acesso a esse material incrível,
+                <span>pedimos que preencham até terça feira (03/04) às 20h este formulário!</span>
+            </h2>
+            <p id="heroTextSecond">
+                Qual é nosso propósito com isso? Queremos te ajudar a aprimorar o seu processo de contratação e encontrar os profissionais
+                de marketing mais adequados. Venha fazer parte dessa mudança!
+            </p>
 
+        </div>
         <form id="form" class="topBefore" onsubmit="formController.add(event)">
 
             <h2>Pesquisa</h2>
             <div id="successView"></div>
 
-            <select id="persona" name="persona" oninvalid="this.setCustomValidity('Favor escolher um')"
-            oninput="setCustomValidity('')" required>
+            <select id="persona" name="persona" oninvalid="this.setCustomValidity('Favor escolher um')" oninput="setCustomValidity('')"
+                required>
                 <option value="" disabled selected>Selecione Uma Opção</option>
                 <option value="0">Sou Contratante</option>
                 <option value="1">Sou Candidato</option>
@@ -87,16 +97,18 @@
             <input id="email" type="email" placeholder="E-Mail" pattern="(.*)+@(.*)+\.(.*)" oninvalid="this.setCustomValidity('Favor Inserir Email no formato nome@dominio.exemplo')"
                 oninput="setCustomValidity('')" autocomplete='email' required>
 
-            <p id="formText">Você já teve problemas em algum processo seletivo? E em relação a análise de competências técnicas na área de Marketing?</p>
+            <p id="formText">Você já teve problemas em algum processo seletivo? E em relação a análise de competências técnicas na área de
+                Marketing?</p>
 
-            <select id="questionFirst" name="leadsFirst" oninvalid="this.setCustomValidity('Favor escolher um')"
-            oninput="setCustomValidity('')" required>
+            <select id="questionFirst" name="leadsFirst" oninvalid="this.setCustomValidity('Favor escolher um')" oninput="setCustomValidity('')"
+                required>
                 <option value="" disabled selected>Selecione Uma Opção</option>
                 <option value="sim">Sim</option>
                 <option value="nao">Nao</option>
             </select>
 
-            <textarea id="questionSecond" type="text" name="leadsSecond" placeholder="Como você lidou&#10; ou está lidando com isso?" required></textarea>
+            <textarea id="questionSecond" type="text" name="leadsSecond" placeholder="Como você lidou&#10; ou está lidando com isso?"
+                required></textarea>
             <textarea id="questionThird" type="text" name="leadsThird" placeholder="Qual seria a solução ideal&#10; para resolver isso?"
                 required></textarea>
             <textarea id="ip" type="text" name="ip"></textarea>
