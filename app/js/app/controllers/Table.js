@@ -25,7 +25,7 @@ class TableCtrl {
     this._filters.name.addEventListener('keyup',e =>  this._update());
     this._filters.email.addEventListener('keyup', e => this._update());
     this._filters.persona.addEventListener('change', e => this._update());
-    
+
     this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
       onAppend: data => {
         this.append(data.key, data.val());
@@ -60,7 +60,7 @@ class TableCtrl {
       let key  = entry[0], item = entry[1];
       if(
         (item._persona == this.persona || this.persona == "") &&
-        (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 || this.name == "") && 
+        (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 || this.name == "") &&
         (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 || this.email == "")) {
         obj[key] = item
       };
@@ -70,7 +70,7 @@ class TableCtrl {
 
   _setupLink (format, link){
     link.href = this._data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(format, this._filterData);
-    this._data.length < 1 ? link.removeAttribute('download') : link.download = 'results.csv';
+    this._data.length < 1 ? link.removeAttribute('download') : link.download = this._export.formats['name'][format];
   }
 
   _setUpdatedTime (){
@@ -90,6 +90,7 @@ class TableCtrl {
     this._view.update(this._filterData);
     this._setupLink(0, this._links[0]);
     this._setupLink(1, this._links[1]);
+    this._setupLink(2, this._links[2]);
     this._setTotalRows();
   }
 
