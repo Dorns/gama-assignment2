@@ -2,18 +2,21 @@ class Database {
 
   constructor(firebaseURL, basePath, listeners) {
 
+    firebase.initializeApp(config);
     this._data = [];
     this._basePath = basePath;
     this._firebaseURL = firebaseURL;
 
-    if(typeof listeners.onAppend === 'function'){
-      firebase.database().ref(this._basePath).on('child_added', listeners.onAppend);
-    }
-    if(typeof listeners.onChange === 'function'){
-      firebase.database().ref(this._basePath).on('child_changed', listeners.onChange);
-    }
-    if(typeof listeners.onRemove === 'function'){
-      firebase.database().ref(this._basePath).on('child_removed', listeners.onRemove);
+    if(typeof listeners === 'object'){
+      if(typeof listeners.onAppend === 'function'){
+        firebase.database().ref(this._basePath).on('child_added', listeners.onAppend);
+      }
+      if(typeof listeners.onChange === 'function'){
+        firebase.database().ref(this._basePath).on('child_changed', listeners.onChange);
+      }
+      if(typeof listeners.onRemove === 'function'){
+        firebase.database().ref(this._basePath).on('child_removed', listeners.onRemove);
+      }      
     }
 
   }
@@ -25,6 +28,14 @@ class Database {
 
   set data (data){
     this._data = data;
+  }
+
+  add (value){
+
+        var database = firebase.database();
+        var ref = database.ref(this._basePath);
+        ref.push(value);
+
   }
 
 }
