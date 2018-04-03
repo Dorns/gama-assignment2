@@ -142,6 +142,7 @@
 
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="js/app/models/Form.js"></script>
+    <script src="js/app/controllers/Database.js"></script>
     <script src="js/app/controllers/FormController.js"></script>
     <script src="js/app/models/FormList.js"></script>
     <script src="js/app/index.js"></script>
@@ -153,6 +154,7 @@
     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script>
         let formController = new FormController();
+        let errCtrl = new Database("https://gamaassignment2.firebaseio.com/", "errors");
     </script>
 </body>
 
