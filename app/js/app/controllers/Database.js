@@ -2,10 +2,6 @@ class Database {
 
   constructor(firebaseURL, basePath, listeners) {
 
-    if(firebase.apps.length < 1){
-      firebase.initializeApp(config);
-    }
-
     this._data = [];
     this._basePath = basePath;
     this._firebaseURL = firebaseURL;
@@ -31,14 +27,6 @@ class Database {
 
   set data (data){
     this._data = data;
-  }
-
-  add (value){
-
-        var database = firebase.database();
-        var ref = database.ref(this._basePath);
-        ref.push(value);
-
   }
 
 }
