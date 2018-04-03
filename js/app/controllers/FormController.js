@@ -22,42 +22,29 @@ class FormController {
 
     add(event) {
 
-
-        try {
-
-            //ADD FORM
-            event.preventDefault();
-            this._formList.add(this._createForm());
-            //CHANGE HERO FOR OBRIGADO
-            this._obrigado.classList.remove("submit");
-            this._hero.classList.remove('hero');
-            
-        } catch(e) {
-            errCtrl.add({error: e, date: (new Date()).getTime()});
-        }
+        //ADD FORM
+        event.preventDefault();
+        this._formList.add(this._createForm());
+        //CHANGE HERO FOR OBRIGADO
+        this._obrigado.classList.remove("submit");
+        this._hero.classList.remove('hero');
 
     }
 
     _createForm() {
 
-        try {
-
-            //CREATE FORM
-            return new Form(
-                this._inputPersona.value,
-                this._inputName.value,
-                this._inputEmail.value,
-                this._inputQuestionFirst.value,
-                this._inputQuestionSecond.value,
-                this._inputQuestionThird.value,
-                this._ip.value,
-                this._currentDate,
-                this._tipo,
-            );
-
-        } catch (e){
-            errCtrl.add({error: {msg: e.message, stackTrace: e.stack}, date: (new Date()).getTime()});
-        }
+        //CREATE FORM
+        return new Form(
+            this._inputPersona.value,
+            this._inputName.value,
+            this._inputEmail.value,
+            this._inputQuestionFirst.value,
+            this._inputQuestionSecond.value,
+            this._inputQuestionThird.value,
+            this._ip.value,
+            this._currentDate,
+            this._tipo,
+        );
     }
 
 }

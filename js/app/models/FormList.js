@@ -19,23 +19,17 @@ class FormList {
     //FORM MAKER
     add(form) {
 
-        try {
-            
-            if (firebaseOn == false) {
-                //FIREBASE START
-                firebase.initializeApp(config);
-            };
-            var database = firebase.database();
-            var ref = database.ref('forms');
-            firebaseOn = true;
+        //FIREBASE START
+        if (firebaseOn == false) {
+            firebase.initializeApp(config);
+        };
+        var database = firebase.database();
+        var ref = database.ref('forms');
+        firebaseOn = true;
 
-            ref.push(form);
+        ref.push(form);
 
-            this._form.push(form);
-
-        } catch(e) {
-            errCtrl.add({error: {msg: e.message, stackTrace: e.stack}, date: (new Date()).getTime()});
-        }
+        this._form.push(form);
     }
 
 }
