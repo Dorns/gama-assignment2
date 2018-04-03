@@ -2,7 +2,10 @@ class Database {
 
   constructor(firebaseURL, basePath, listeners) {
 
-    firebase.initializeApp(config);
+    if(firebase.apps.length < 1){
+      firebase.initializeApp(config);
+    }
+
     this._data = [];
     this._basePath = basePath;
     this._firebaseURL = firebaseURL;
