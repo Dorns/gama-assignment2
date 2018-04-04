@@ -9,8 +9,8 @@ class TableCtrl {
     this.paginated   = [];
 
     this.page = 1;
-    this.per_page = 2;
-    this.showPages = 5;
+    this.per_page = 10;
+    this.showPages = 2;
 
     this._table = $("#results");
     this._pagDiv = $("#pagination");
