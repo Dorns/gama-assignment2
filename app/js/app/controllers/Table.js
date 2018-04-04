@@ -28,9 +28,18 @@ class TableCtrl {
       persona : $('#selectPersona')
     }
 
-    this._filters.name.addEventListener('keyup',e =>  this._update());
-    this._filters.email.addEventListener('keyup', e => this._update());
-    this._filters.persona.addEventListener('change', e => this._update());
+    this._filters.name.addEventListener('keyup',e =>  {
+      this.page = 1;
+      this._update()
+    });
+    this._filters.email.addEventListener('keyup', e => {
+      this.page = 1;
+      this._update()
+      });
+    this._filters.persona.addEventListener('change', e => {
+      this.page = 1;
+      this._update()
+    });
 
     this._pagDiv.addEventListener('click', e => {
 
@@ -45,17 +54,20 @@ class TableCtrl {
     this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
       onAppend: data => {
         this.append(data.key, data.val());
+        this.page = 1;
         this._update();
         this._setUpdatedTime();
       },
       onChange: ref => {
         this._data[ref.key] = ref.val();
+        this.page = 1;
         this._update();
         this._setUpdatedTime();
       },
       onRemove: ref => {
         if(typeof this._data[ref.key] !== 'undefined'){
           delete this._data[ref.key];
+          this.page = 1;
         }
         this._update();
         this._setUpdatedTime();
@@ -69,7 +81,7 @@ class TableCtrl {
   }
 
   _filter (){
-    this.page = 1;
+    console.log(this.page)
     if(this.name == "" && this.email == "" && this.persona == ""){
       return this._filterData = this._data;
     }
