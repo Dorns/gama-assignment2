@@ -6,12 +6,18 @@ class TableCtrl {
 
     this._data       = {};
     this._filterData = {};
+    this.paginated   = [];
+
+    this.page = 1;
+    this.per_page = 10;
 
     this._table = $("#results");
+    this._pagDiv = $("#pagination");
     this._links  = document.querySelectorAll("a.export");
 
-    this._view   = new TableView(this._table);
-    this._export = new Export();
+    this._view    = new TableView(this._table);
+    this._pagView = new Pagination(this._pagDiv);
+    this._export  = new Export();
 
     this._totalRows   = $('#total-rows');
     this._updatedTime = $('#updated-time');
@@ -25,6 +31,16 @@ class TableCtrl {
     this._filters.name.addEventListener('keyup',e =>  this._update());
     this._filters.email.addEventListener('keyup', e => this._update());
     this._filters.persona.addEventListener('change', e => this._update());
+
+    this._pagDiv.addEventListener('click', e => {
+
+      if(typeof e.target.dataset.page === 'undefined')
+        return false;
+
+      this.page = parseInt(e.target.dataset.page);
+      this._update();
+
+    });
 
     this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
       onAppend: data => {
@@ -68,6 +84,18 @@ class TableCtrl {
     }, {});
   }
 
+  _setupPagination (){
+
+    let lastPg  = this.page*this.per_page,
+        firstPg = lastPg - this.per_page,
+        maxPage = Math.min(this.page+this.per_page, Math.ceil(this.filter.length / this.per_page));
+
+    this.paginated = this.filter.slice(firstPg, lastPg);
+
+    this._pagView.update(Math.min(1, Math.abs(this.page)), maxPage);
+
+  }
+
   _setupLink (format, link){
     link.href = this._data.length < 1 ? 'javascript:void(0);' : this._export.toCSV(format, this._filterData);
     this._data.length < 1 ? link.removeAttribute('download') : link.download = this._export.formats['name'][format];
@@ -87,11 +115,16 @@ class TableCtrl {
 
   _update (){
     this._filter();
-    this._view.update(this._filterData);
+    this._setupPagination();
+    this._view.update(this.paginated);
     this._setupLink(0, this._links[0]);
     this._setupLink(1, this._links[1]);
     this._setupLink(2, this._links[2]);
     this._setTotalRows();
+  }
+
+  get filter (){
+    return Object.values(this._filterData);
   }
 
   get name (){

@@ -47,10 +47,18 @@
           </div>
           <div class="card-body">
 
-            <div  id="results"></div>
-            <a href="" class="export btn btn-primary">Exportar Leads</a>
-            <a href="" class="export btn btn-primary">Exportar Validação</a>
-            <a href="" class="export btn btn-default">Exportar e-mails</a>
+            <div id="results"></div>
+
+            <div class="row">
+
+              <div class="col-sm-8">
+                <a href="" class="export btn btn-primary">Exportar Leads</a>
+                <a href="" class="export btn btn-primary">Exportar Validação</a>
+                <a href="" class="export btn btn-default">Exportar e-mails</a>
+              </div>
+              <div class="col-4" id="pagination"></div>
+
+            </div>
           </div>
         </div>
         <div class="card-footer text-muted">
@@ -64,6 +72,7 @@
 
   <script type="text/javascript" src="js/app/views/Views.js"></script>
   <script type="text/javascript" src="js/app/views/Table.js"></script>
+  <script type="text/javascript" src="js/app/views/Pagination.js"></script>
   <script type="text/javascript" src="js/app/models/Export.js"></script>
   <script type="text/javascript" src="js/app/controllers/Database.js"></script>
   <script type="text/javascript" src="js/app/controllers/Table.js"></script>
