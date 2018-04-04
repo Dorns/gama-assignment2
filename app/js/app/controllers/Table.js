@@ -9,7 +9,8 @@ class TableCtrl {
     this.paginated   = [];
 
     this.page = 1;
-    this.per_page = 10;
+    this.per_page = 2;
+    this.showPages = 5;
 
     this._table = $("#results");
     this._pagDiv = $("#pagination");
@@ -100,12 +101,19 @@ class TableCtrl {
   _setupPagination (){
 
     let lastPg  = this.page*this.per_page,
-        firstPg = lastPg - this.per_page,
-        maxPage = Math.min(this.page+this.per_page, Math.ceil(this.filter.length / this.per_page));
+        firstPg = lastPg - this.per_page;
+
+    let maxPage = Math.min(this.page+this.per_page, Math.ceil(this.filter.length / this.per_page)),
+        minPage = Math.min(1, Math.abs(this.page)),
+        showPages = Math.ceil(this.showPages/2);
+
+    minPage = Math.max(minPage, this.page - showPages, 1);
+    maxPage = Math.min(this.page + showPages, maxPage);
+    maxPage = Math.max(maxPage, this.showPages + 1);
 
     this.paginated = this.filter.slice(firstPg, lastPg);
 
-    this._pagView.update(Math.min(1, Math.abs(this.page)), maxPage);
+    this._pagView.update(this.page, minPage, maxPage);
 
   }
 
