@@ -28,7 +28,6 @@ class TableView extends Views {
               </tr>
             `).join('')}
           </tbody>
-
       </table>
     `
   }
