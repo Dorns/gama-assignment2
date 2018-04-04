@@ -114,6 +114,7 @@ class TableCtrl {
   }
 
   _update (){
+    this.page = 1;
     this._filter();
     this._setupPagination();
     this._view.update(this.paginated);
