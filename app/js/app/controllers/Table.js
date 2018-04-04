@@ -69,6 +69,7 @@ class TableCtrl {
   }
 
   _filter (){
+    this.page = 1;
     if(this.name == "" && this.email == "" && this.persona == ""){
       return this._filterData = this._data;
     }
@@ -114,7 +115,6 @@ class TableCtrl {
   }
 
   _update (){
-    this.page = 1;
     this._filter();
     this._setupPagination();
     this._view.update(this.paginated);
