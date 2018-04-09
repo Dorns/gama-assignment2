@@ -25,8 +25,7 @@ class TableCtrl {
 
     this._filters = {
       name    : $('#inputName'),
-      email   : $('#inputEmail'),
-      persona : $('#selectPersona')
+      email   : $('#inputEmail')
     }
 
     this._filters.name.addEventListener('keyup',e =>  {
@@ -34,10 +33,6 @@ class TableCtrl {
       this._update()
     });
     this._filters.email.addEventListener('keyup', e => {
-      this.page = 1;
-      this._update()
-      });
-    this._filters.persona.addEventListener('change', e => {
       this.page = 1;
       this._update()
     });
@@ -52,7 +47,7 @@ class TableCtrl {
 
     });
 
-    this._db = new Database('https://gamaassignment2.firebaseio.com/', 'forms', {
+    this._db = new Database('https://gamaassignment2.firebaseio.com/', 'leads', {
       onAppend: data => {
         this.append(data.key, data.val());
         this.page = 1;
@@ -83,13 +78,12 @@ class TableCtrl {
 
   _filter (){
     console.log(this.page)
-    if(this.name == "" && this.email == "" && this.persona == ""){
+    if(this.name == "" && this.email == ""){
       return this._filterData = this._data;
     }
     this._filterData = Object.entries(this._data).reduce((obj, entry)=>{
       let key  = entry[0], item = entry[1];
       if(
-        (item._persona == this.persona || this.persona == "") &&
         (item._name.toLowerCase().indexOf(this.name.toLowerCase()) > -1 || this.name == "") &&
         (item._email.toLowerCase().indexOf(this.email.toLowerCase()) > -1 || this.email == "")) {
         obj[key] = item
@@ -155,9 +149,4 @@ class TableCtrl {
   get email (){
     return this._filters.email.value;
   }
-
-  get persona (){
-    return this._filters.persona.value;
-  }
-
 }
