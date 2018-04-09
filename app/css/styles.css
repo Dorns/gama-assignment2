@@ -1,13 +1,3 @@
-@font-face {
-  font-family: neris-light;
-  src: url("../font/Neris-Light.otf") format("opentype");
-}
-
-@font-face {
-  font-family: neris-thin;
-  src: url("../font/Neris-Thin.otf") format("opentype");
-}
-
 *{
   margin: 0;
   padding: 0;
@@ -30,15 +20,13 @@ body {
 
 .conteudoCabecalho {
   width: 100%;
-  min-height: 100vh;
-  font-family: neris-thin;
-  background-image: url("../images/fundo_banner_1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 760px;
+  font-family: 'Raleway', sans-serif;
   color: #FFF;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color:#00A5C8;
 }
 
 .container {
@@ -66,22 +54,23 @@ body {
 }
 
 .conteudoCabecalho-conteudo p {
-  font-size: 1.2rem;
+  font-size: 18px;
+  margin-bottom: 16px;
 }
 
 .container .conteudoCabecalho-conteudo h2 {
-  font-family: neris-light;
-  font-size: 29px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
   margin-top: 25px;
 }
 
 .container h2 {
-  font-family: neris-light;
+  font-family: 'Raleway', sans-serif;
   font-size: 45px;
 }
 
 .container span {
-  font-family: neris-thin;
+  font-family: 'Raleway', sans-serif;
   font-weight: normal;
 }
 
@@ -90,7 +79,7 @@ body {
 }
 
 .conteudoCabecalho-conteudo {
-  font-family: neris-thin;
+  font-family: 'Raleway', sans-serif;
 }
 
 .conteudoCabecalho-botao {
@@ -101,86 +90,68 @@ body {
   margin: 0px 10px 10px 0px;
   border-radius: 10px;
   color: #FFF;
-  font-size: 0.8rem;
-  font-family: neris-light;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  background-color: rgb(45, 104, 192);
+  background-color: #94c13d;
   display: block;
   border: none;
-  border-bottom: 5px solid rgb(73, 190, 174);
-  font-family: neris-light;
+  border-bottom: 4px solid #afd16e;
   font-weight: bold;
   white-space: nowrap;
 }
 
 .hero {
   width: 100%;
-  height: 100%;
+  height: 760px;
   padding: 20px;
   display: flex;
   align-items: center;
-  background-image: url("../images/fundo_pesquisa_1024.jpg");
+  background-image: url("../images/conteudo_bg.png");
   background-size: cover;
   background-position: center, center;
-  border-top: 5px solid #366dbf;
   justify-content: space-around;
 }
 
 .text {
   width: 30%;
   margin-left: 240px;
+  font-family: 'Raleway', sans-serif;
 }
 
-#heroText {
-  font-family: neris-thin;
-  font-size: 1.2rem;
+.heroText {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
   color: white;
   margin-bottom: 25px;
-  width: 330px;
-}
-
-#heroTextSecond {
-    font-family: neris-thin;
-    font-size: 1.2rem;
-    color: white;
-    margin-top: 25px;
-    width: 330px;
-}
-
-#heroTextBold {
-  font-size: 1.7rem;
-  font-family: neris-thin;
 }
 
 .text span {
-  font-family: neris-light;
+  font-family: 'Raleway', sans-serif;
 }
 
 .hero form {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   align-self: center;
   width: 50%;
-  background-color: #366dbfc7;
+  background-color: #00a5c8;
   text-align: center;
   margin: 60px 200px 60px 0;
   border-radius: 5px;
 }
 
 .hero h2 {
-  font-family: neris-light;
+  font-family: 'Raleway', sans-serif;
   margin: 10px 0;
   color: white;
 }
 
 .hero p {
   color: white;
-  font-size: 0.8rem;
-  margin: 2px 0;
-  width: 280px;
 }
 
 .hero input::placeholder {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #bbb5af;
   font-size: 0.875em;
   text-align: center;
@@ -214,10 +185,8 @@ body {
   padding: 15px 15px 10px 15px;
 }
 
-.hero input,
-textarea,
-select {
-  font-family: 'Open Sans', sans-serif;
+.hero input {
+  font-family: 'Raleway', sans-serif;
   font-size: 0.875em;
   height: 35px;
   margin: 7px 0;
@@ -230,8 +199,7 @@ select {
   text-align: center;
 }
 
-.hero input,
-.hero select {
+.hero input {
   width: 240px;
   padding: 0;
   text-align: center;
@@ -240,11 +208,8 @@ select {
 .hero textarea {
   width: 240px;
   height: 140px;
-  text-align: center;
-}
-
-.hero select {
-  text-align-last: center;
+  resize: none;
+  border-radius: 5px;
 }
 
 .hero textarea::placeholder {
@@ -256,14 +221,13 @@ select {
   width: 180px;
   height: 55px;
   margin: 10px;
-  border-radius: 5px;
-  color: #5790e6;
+  border-radius: 10px;
   font-size: 0.8rem;
-  font-family: neris-light;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  background-color: #8bb209;
+  background-color: #94c13d;
   border: none;
-  border-bottom: 5px solid #4a5f04;
+  border-bottom: 5px solid #afd16e;
   color: #FFF;
 }
 
@@ -298,14 +262,14 @@ select {
 }
 
 .obrigado h2 {
-  font-family: neris-light;
+  font-family: 'Raleway', sans-serif;
   font-size: 6rem;
   color: white;
   margin: 0 0 10px 0;
 }
 
 .obrigado h3 {
-  font-family: neris-thin;
+  font-family: 'Raleway', sans-serif;
   font-size: 2rem;
   color: white;
   margin: 0 320px;
@@ -316,15 +280,15 @@ select {
 }
 
 .conteudoRodape {
-  background-color: #4F4E4E;
-  color: #c0bfbf;
+  background-color: #CCCCCC;
+  color: #666666;
   text-align: center;
   display: flex;
   justify-content: space-around;
   padding-top: 2%;
   padding-bottom: 2%;
-  font-family: neris-light;
-  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  height: 110px;
 }
 
 a:link,
@@ -332,5 +296,26 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: white;
+  color: #666666;
+}
+
+.logo {
+  padding-left: 20%;
+  margin: 0;
+}
+
+.heroText-bold {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.underline {
+  font-weight: bold;
+  text-decoration: underline
+}
+
+#formText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
