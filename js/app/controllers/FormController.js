@@ -11,7 +11,7 @@ class FormController {
         this._currentDate = new Date().toLocaleString();
         this._formList = new FormList();
         //CHANGE MAKER
-        // this._obrigado = $('#obrigado');
+        this._obrigado = $('#obrigado');
         this._hero = $('#hero');
     }
 
@@ -21,8 +21,8 @@ class FormController {
         event.preventDefault();
         this._formList.add(this._createForm());
         //CHANGE HERO FOR OBRIGADO
-        // this._obrigado.classList.remove("submit");
-        // this._hero.classList.remove('hero');
+        this._obrigado.classList.remove("submit");
+        this._hero.classList.remove('hero');
     }
 
     _createForm() {
