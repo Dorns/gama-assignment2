@@ -4,6 +4,14 @@
     margin: 0;
   }
 
+  .container img{
+    margin-top: 25px;
+  }
+
+  .conteudoCabecalho {
+    height: auto;
+  }
+
   .conteudoCabecalho .container {
     flex-direction: column;
     text-align: center;
@@ -39,9 +47,6 @@
     margin: 0px 10px 0 0;
     position: static;
   }
-  .conteudoCabecalho-conteudo p {
-    margin: 0 10px 0 10px;
-  }
 
   .conteudoCabecalho-titulo h2 {
     line-height: 45px;
@@ -68,50 +73,65 @@
     margin: auto;
     max-width: 50%;
   }
+
   .hero {
     flex-direction: column;
     max-width: 100%;
-    padding: 20px 20px 50px 20px
+    padding: 20px 20px 50px 20px;
+    height: auto;
   }
+
   .text {
     margin: 30px 0 30px 0;
     width: 75%;
     text-align: center;
   }
+
   .hero #form {
     width: 92%;
     margin: 0 0 15px 0;
     max-width: 400px;
   }
+
   .hero select {
     width: 92%;
   }
+
   .hero input {
     width: 92%;
   }
+
   .hero p {
     width: 100%;
   }
+
   #heroTextBold {
     margin-top: 18px;
   }
+
   .hero textarea {
     width: 92%;
   }
+
   .hero #submit {
     width: 92%;
     margin: 10px 0 10px 0px;
   }
+
   .obrigado h2 {
     font-family: neris-light;
     font-size: 3rem;
     color: white;
     margin: 0 0 10px 0;
   }
+
   .obrigado h3 {
-    font-family: neris-thin;
+    font-family: 'Raleway', sans-serif;
     font-size: 1rem;
     color: white;
     margin: 0 30px;
+  }
+  .conteudoRodape {
+    flex-direction: column;
   }
 }
