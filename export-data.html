@@ -16,7 +16,7 @@
 
     <div class="row">
       <div class="col-sm-8 offset-sm-2">
-        <form class="form-inline">
+        <form class="form-inline" hidden>
 
           <div class="form-group mb-2">
             <label for="inputName" class="sr-only">Nome</label>
@@ -26,7 +26,7 @@
             <label for="inputEmail" class="sr-only">E-mail</label>
             <input type="text" class="form-control" id="inputEmail" placeholder="E-mail">
           </div>
-          <div class="form-group mx-sm-3 mb-2">
+          <div class="form-group mx-sm-3 mb-2" hidden>
             <label for="selectPersona">Persona </label>
             <select class="form-control" id="selectPersona">
               <option value="" selected>Todos</option>
@@ -53,8 +53,8 @@
 
               <div class="col-sm-8">
                 <a href="" class="export btn btn-primary">Exportar Leads</a>
-                <a href="" class="export btn btn-primary">Exportar Validação</a>
-                <a href="" class="export btn btn-default">Exportar e-mails</a>
+                <a href="" class="export btn btn-primary" hidden>Exportar Validação</a>
+                <a href="" class="export btn btn-primary">Exportar e-mails</a>
               </div>
               <div class="col-4" id="pagination"></div>
 
@@ -80,16 +80,14 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 
   <script>
-
   	firebase.initializeApp({
-      apiKey: "AIzaSyBfc1ZzpeExKyHbXD3ZfcCgeVXg1rBmubg",
-      authDomain: "gamaassignment2.firebaseapp.com",
-      databaseURL: "https://gamaassignment2.firebaseio.com",
-      projectId: "gamaassignment2",
-      storageBucket: "gamaassignment2.appspot.com",
-      messagingSenderId: "552591821332"
+      apiKey: "AIzaSyC9kHRqa_vFseX0_J8_GYQSi92-5OoSMrg",
+      authDomain: "assigment-3-45055.firebaseapp.com",
+      databaseURL: "https://assigment-3-45055.firebaseio.com",
+      projectId: "assigment-3-45055",
+      storageBucket: "",
+      messagingSenderId: "518545836753"
     });
-
     let Table = new TableCtrl();
   </script>
 

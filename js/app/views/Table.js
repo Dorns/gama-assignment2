@@ -10,9 +10,8 @@ class TableView extends Views {
           <thead>
             <tr>
               <th>Date</th>
-              <th>IP</th>
-              <th>Persona</th>
               <th>Name</th>
+              <th>Ocupação</th>
               <th>E-mail</th>
             </tr>
           </thead>
@@ -21,9 +20,8 @@ class TableView extends Views {
             ${Object.entries(model).map(data => `
               <tr>
                 <td>${data[1]._currentdate}</td>
-                <td>${data[1]._ip}</td>
-                <td>${parseInt(data[1]._persona) === 1 ? 'CONTRATADO': 'CONTRATANTE'}</td>
                 <td>${data[1]._name}</td>
+                <td>${data[1]._ocupacao}</td>
                 <td>${data[1]._email}</td>
               </tr>
             `).join('')}
