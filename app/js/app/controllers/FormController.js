@@ -10,9 +10,6 @@ class FormController {
         this._inputQuestionFirst = $('#questionFirst');
         this._currentDate = new Date().toLocaleString();
         this._formList = new FormList();
-        //CHANGE MAKER
-        this._obrigado = $('#obrigado');
-        this._hero = $('#hero');
     }
 
     add(event) {
@@ -20,9 +17,7 @@ class FormController {
         //ADD FORM
         event.preventDefault();
         this._formList.add(this._createForm());
-        //CHANGE HERO FOR OBRIGADO
-        this._obrigado.classList.remove("submit");
-        this._hero.classList.remove('hero');
+        window.location.replace('obrigado.html');
     }
 
     _createForm() {
