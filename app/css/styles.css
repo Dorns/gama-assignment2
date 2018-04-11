@@ -123,7 +123,7 @@ body {
 .heroText {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
-  color: white;
+  color:#636363;
   margin-bottom: 25px;
 }
 
@@ -145,11 +145,19 @@ body {
 .hero h2 {
   font-family: 'Raleway', sans-serif;
   margin: 10px 0;
-  color: white;
+  color: #383838;
+}
+
+.hero form h2 {
+  color: #FFF;
+}
+
+.hero form p {
+  color: #FFF;
 }
 
 .hero p {
-  color: white;
+  color: #383838;
 }
 
 .hero input::placeholder {

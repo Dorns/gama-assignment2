@@ -17,7 +17,6 @@ class FormController {
         //ADD FORM
         event.preventDefault();
         this._formList.add(this._createForm());
-        window.location.replace('obrigado.html');
     }
 
     _createForm() {

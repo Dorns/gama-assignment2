@@ -27,7 +27,11 @@ class FormList {
         var ref = database.ref('leads');
         firebaseOn = true;
 
-        ref.push(form);
+        ref.push(form, error => {
+            if (!error){
+                window.location.replace("obrigado.html");
+                }
+            });
 
         this._form.push(form);
     }
